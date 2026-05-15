@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock title %}
+
+{% block body %}
+    <h1 class="text-center mt-5">
+    {{ body }}
+    </h1>
+    
+    <div class="d-flex justify-content-center mt-5">
+        <div class="w-75">
+
+            <table class="table table-bordered border-dark text-center">
+                <thead class="table-primary">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                        <th>Profession</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for person in people %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ person.name }}</td>
+                        <td>{{ person.age }}</td>
+                        <td>{{ person.city }}</td>
+                        <td>{{ person.profession }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+ {% endblock body %}
+
+
