@@ -30,3 +30,29 @@ python manage.py startapp app_name
 
 # run server
 python manage.py runserver
+
+
+# Templates 
+
+#load .env file
+pip install python-dotenv
+
+#stored all installed packages
+pip freeze > requirements.txt
+
+#install later( other can install same packages)
+pip install -r requirements.txt
+
+# uninstall
+pip uninstall -r requirements.txt
+
+
+# MODELS
+
+# migration file created
+python manage.py makemigrations
+
+python manage.py migrate
+
+# create superuser
+python manage.py createsuperuser
