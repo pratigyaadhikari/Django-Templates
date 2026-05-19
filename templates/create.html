@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}create recipe{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <form method = "POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" class="form-control"  aria-describedby="emailHelp" name = "name">  
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Ingredients</label>
+            <input type="text" class="form-control"  name = "ingredient">  
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Instruction</label>
+            <textarea class="form-control" rows="4" placeholder="Your message" name = "instruction"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Time</label>
+            <input type="text" class="form-control"  name = "time">  
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Level</label>
+            <input type="text" class="form-control"  name = "level">  
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock body %}

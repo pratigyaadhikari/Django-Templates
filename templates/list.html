@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock title %}
+
+{% block body %}
+ 
+
+<div class="w-75">
+
+    <table class="table table-bordered border-dark text-center">
+                <thead class="table-primary">
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Ingredients</th>
+                        <th>Instructions</th>
+                        <th>Time</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for person in recipes %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ person.name }}</td>
+                        <td>{{ person.ingredients }}</td>
+                        <td>{{ person.instruction }}</td>
+                        <td>{{ person.time }}</td>
+                        <td>{{ person.level }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+    </table>
+
+</div>
+{% endblock body %}

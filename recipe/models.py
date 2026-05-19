@@ -9,7 +9,7 @@ class Recipe(models.Model):
     level = models.CharField(max_length=10)
     
 # model -> makemigrations -> migration file created -> migrate -> database reflect
-# table_name : appname_modelname 
+# table_name : appname_modelname -> recipe_recipe
 
     def __str__(self):
         return self.name
