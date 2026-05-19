@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}update recipe{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <form method = "POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" class="form-control"  aria-describedby="emailHelp" name = "name" value = "{{recipes.name}}">   {% comment %} value = "{{views file ko context ma vako key_name.Recipe_model_Ko_field_name}}"  {% endcomment %}
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Ingredients</label>
+            <input type="text" class="form-control"  name = "ingredient" value = "{{recipes.ingredients}}">  
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Instruction</label>
+            <textarea class="form-control" rows="4" placeholder="Your message" name = "instruction" >{{recipes.instruction}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Time</label>
+            <input type="text" class="form-control"  name = "time" value = "{{recipes.time}}">  
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Level</label>
+            <input type="text" class="form-control"  name = "level" value = "{{recipes.level}}">  
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+{% endblock body %}

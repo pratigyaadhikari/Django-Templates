@@ -16,6 +16,7 @@
                         <th>Instructions</th>
                         <th>Time</th>
                         <th>Level</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
 
@@ -28,6 +29,8 @@
                         <td>{{ person.instruction }}</td>
                         <td>{{ person.time }}</td>
                         <td>{{ person.level }}</td>
+                        <td><a href=/recipe/{{person.id}}/ class = "btn btn-success">update</a></td>
+
                     </tr>
                     {% endfor %}
                 </tbody>
