@@ -42,4 +42,14 @@ def update(request, id):
         recipe.level = level
         recipe.save()
         return redirect('/recipe/')
-    return render(request,"update.html",context)
+    return render(request,"update.html",context)    
+
+def delete(request,id):
+    recipe = Recipe.objects.get(id = id)
+    context = {
+        "recipes":recipe
+    }
+    if request.method == "POST":
+        recipe.delete()
+        return redirect('/recipe/')
+    return render(request,"delete.html",context)
